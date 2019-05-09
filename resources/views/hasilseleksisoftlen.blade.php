@@ -1,5 +1,25 @@
 @extends('template/template')
 @section('content')
+<style type="text/css">
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){}
+
+th {
+    background-color: #black;
+    color: w;
+}
+</style>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -16,9 +36,9 @@
                       <th>warna</th>
                       <th>harga</th>
                       <th>ukuran</th>
-                      <th>ketebalan</th>
-                      <th>model</th>
-                      <th>Jumlah</th>
+                      <th>kadar air</th>
+                      <th>masa pakai</th>
+                      <th>Total nilai</th>
                     </tr>
 
                     @for($i=0;$i<=3;$i++)
@@ -29,8 +49,8 @@
                         <td>{{$warna[$i]}}</td>
                         <td>{{$harga[$i]}}</td>
                         <td>{{$ukuran[$i]}}</td>
-                        <td>{{$ketebalan[$i]}}</td>
-                        <td>{{$model[$i]}}</td>
+                        <td>{{$kadar[$i]}}</td>
+                        <td>{{$masa[$i]}}</td>
                         <td>{{$jumlah[$i]}}</td>
 
                     </tr>

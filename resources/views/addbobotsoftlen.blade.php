@@ -6,7 +6,7 @@
 			<div class="inner_sec">
 				<p class="sub text-center mb-lg-5 mb-3">Masukkan bobot kriteria kacamata</p>
 				<div class="contact_grid_right">
-					<form method="post" action="/warna" enctype="multipart/form-data">
+					<form method="post" action="/warnasl" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
@@ -42,8 +42,8 @@
                             <td>{{$warna->name}}</td>
                             <td>{{$warna->bobot}}</td>
                             <td>{{$warna->sifat}}</td>
-                            <td><a href="/editwarna/{{$warna->id}}">edit</a>
-                            <form method="POST" action="/deletewarna/{{$warna->id}}">
+                            <td><a href="/editwarnasl/{{$warna->id}}">edit</a>
+                            <form method="POST" action="/deletewarnasl/{{$warna->id}}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <button type="submit">Delete</button>
@@ -54,13 +54,13 @@
                     </table>
 				</div>
                 <div class="contact_grid_right">
-					<form method="post" action="/ketebalan" enctype="multipart/form-data">
+					<form method="post" action="/kadar" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
-                                <h3>ketebalan</h3>
+                                <h3>kadar</h3>
 								<div class="form-group">
-									<label class="my-2">ketebalan</label>
+									<label class="my-2">kadar</label>
 									<input class="form-control" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
@@ -85,13 +85,13 @@
                     <th>sifat</th>
                     <th>action</th>
                     </tr>
-                    @foreach($ketebalans as $ketebalan)
+                    @foreach($kadars as $kadar)
                         <tr>
-                            <td>{{$ketebalan->name}}</td>
-                            <td>{{$ketebalan->bobot}}</td>
-                            <td>{{$ketebalan->sifat}}</td>
-                            <td><a href="/editketebalan/{{$ketebalan->id}}">edit</a>
-                            <form method="POST" action="/deleteketebalan/{{$ketebalan->id}}">
+                            <td>{{$kadar->name}}</td>
+                            <td>{{$kadar->bobot}}</td>
+                            <td>{{$kadar->sifat}}</td>
+                            <td><a href="/editkadar/{{$kadar->id}}">edit</a>
+                            <form method="POST" action="/deletekadar/{{$kadar->id}}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <button type="submit">Delete</button>
@@ -102,7 +102,7 @@
                     </table>
 				</div>
                 <div class="contact_grid_right">
-					<form method="post" action="/harga" enctype="multipart/form-data">
+					<form method="post" action="/hargasl" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
@@ -138,8 +138,8 @@
                             <td>{{$harga->name}}</td>
                             <td>{{$harga->bobot}}</td>
                             <td>{{$harga->sifat}}</td>
-                            <td><a href="/editharga/{{$harga->id}}">edit</a>
-                            <form method="POST" action="/deleteharga/{{$harga->id}}">
+                            <td><a href="/edithargasl/{{$harga->id}}">edit</a>
+                            <form method="POST" action="/deletehargasl/{{$harga->id}}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <button type="submit">Delete</button>
@@ -150,7 +150,7 @@
                     </table>
 				</div>
                 <div class="contact_grid_right">
-					<form method="post" action="/ukuran" enctype="multipart/form-data">
+					<form method="post" action="/ukuransl" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
@@ -186,8 +186,8 @@
                             <td>{{$ukuran->name}}</td>
                             <td>{{$ukuran->bobot}}</td>
                             <td>{{$ukuran->sifat}}</td>
-                            <td><a href="/editukuran/{{$ukuran->id}}">edit</a>
-                            <form method="POST" action="/deleteukuran/{{$ukuran->id}}">
+                            <td><a href="/editukuransl/{{$ukuran->id}}">edit</a>
+                            <form method="POST" action="/deleteukuransl/{{$ukuran->id}}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <button type="submit">Delete</button>
@@ -198,13 +198,13 @@
                     </table>
 				</div>
                 <div class="contact_grid_right">
-					<form method="post" action="/model" enctype="multipart/form-data">
+					<form method="post" action="/masa" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
-                                <h3>model</h3>
+                                <h3>masa</h3>
 								<div class="form-group">
-									<label class="my-2">model</label>
+									<label class="my-2">masa</label>
 									<input class="form-control" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
@@ -229,13 +229,13 @@
                     <th>sifat</th>
                     <th>action</th>
                     </tr>
-                    @foreach($models as $model)
+                    @foreach($masas as $masa)
                         <tr>
-                            <td>{{$model->name}}</td>
-                            <td>{{$model->bobot}}</td>
-                            <td>{{$model->sifat}}</td>
-                            <td><a href="/editmodel/{{$model->id}}">edit</a>
-                            <form method="POST" action="/deletemodel/{{$model->id}}">
+                            <td>{{$masa->name}}</td>
+                            <td>{{$masa->bobot}}</td>
+                            <td>{{$masa->sifat}}</td>
+                            <td><a href="/editmasa/{{$masa->id}}">edit</a>
+                            <form method="POST" action="/deletemasa/{{$masa->id}}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <button type="submit">Delete</button>

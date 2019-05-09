@@ -61,7 +61,7 @@
                                         <img src="/images/{{$ka->image}}" class="img-fluid" alt="">
                                         <div class="men-cart-pro">
                                             <div class="inner-men-cart-pro">
-                                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                                <a href="/viewkacamata/{{$ka->id}}" class="link-product-add-cart">View</a>
                                             </div>
                                         </div>
                                         <span class="product-new-top">New</span>
@@ -71,7 +71,7 @@
                                             <div class="grid_meta">
                                                 <div class="product_price">
                                                     <h4>
-                                                        <a href="single.html">{{$ka->nama}}</a>
+                                                        <a href="/viewkacamata/{{$ka->id}}">{{$ka->nama}}</a>
                                                     </h4>
                                                     <div class="grid-price mt-2">
                                                         <span class="money ">Idr {{$ka->harga}}</span>
@@ -92,17 +92,18 @@
     <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container-fluid">
 			<div class="inner-sec-shop px-lg-4 px-3">
-				<h3 class="tittle-w3layouts my-lg-4 my-4">Softlens terbaru untuk anda </h3>
+				<h3 class="tittle-w3layouts my-lg-4 my-4">softlens terbaru untuk anda </h3>
 				<div class="row">
 					<!-- /womens -->
+                    @foreach($les as $le)
 					<div class="col-md-3 product-men women_two">
 						<div class="product-googles-info googles">
 							<div class="men-pro-item">
                                     <div class="men-thumb-item">
-                                        <img src="images/s1.jpg" class="img-fluid" alt="">
+                                        <img src="/images/{{$le->image}}" class="img-fluid" alt="">
                                         <div class="men-cart-pro">
                                             <div class="inner-men-cart-pro">
-                                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                                <a href="/viewsoftlen/{{$le->id}}" class="link-product-add-cart">Quick View</a>
                                             </div>
                                         </div>
                                         <span class="product-new-top">New</span>
@@ -112,49 +113,22 @@
                                             <div class="grid_meta">
                                                 <div class="product_price">
                                                     <h4>
-                                                        <a href="single.html">Farenheit (Grey)</a>
+                                                        <a href="/viewsoftlen/{{$le->id}}">{{$le->nama}}</a>
                                                     </h4>
                                                     <div class="grid-price mt-2">
-                                                        <span class="money ">$575.00</span>
+                                                        <span class="money ">Idr {{$le->harga}}</span>
                                                     </div>
                                                 </div>
-                                                <ul class="stars">
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
                                             </div>
-                                            gridmeta
 									</div>
 									<div class="clearfix"></div>
 								</div>
 							</div>
 						</div>
 					</div>
+                    @endforeach
                 </div>
             </div>
         </div>
-     </section>
+    </section>
 @endsection

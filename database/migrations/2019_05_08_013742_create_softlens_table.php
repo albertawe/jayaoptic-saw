@@ -21,6 +21,8 @@ class CreateSoftlensTable extends Migration
             $table->string('ukuran')->nullable();
             $table->integer('harga')->nullable();
             $table->string('warna')->nullable();
+            $table->string('jenis')->nullable();
+            $table->string('kriharga')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

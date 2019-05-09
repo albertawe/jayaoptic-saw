@@ -14,7 +14,10 @@ class CreateKdrslsTable extends Migration
     public function up()
     {
         Schema::create('kdrsls', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id');
+            $table->string('name');
+            $table->integer('bobot');
+            $table->string('sifat');
             $table->timestamps();
         });
     }

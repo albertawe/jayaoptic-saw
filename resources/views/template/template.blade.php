@@ -52,15 +52,20 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav nav-mega mx-auto">
 						<li class="nav-item">
-							<a class="nav-link ml-lg-0" href="/home">Home
+							<a class="nav-link ml-lg-0" href="/">Home
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/genk">Pemilihan Kacamata</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/gens">Pemilihan softlens</a>
+							<a class="nav-link" href="/gensl">Pemilihan softlens</a>
 						</li>
+                        @if (!\Auth::user())
+                        <li class="nav-item">
+							<a class="nav-link" href="/login">login</a>
+						</li>
+                        @else
                         <li class="nav-item">
 							<a class="nav-link" href="/addk">Add Kacamata</a>
 						</li>
@@ -68,8 +73,18 @@
 							<a class="nav-link" href="/editkc">edit kriteria Kacamata</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/adds">Add softlens</a>
+							<a class="nav-link" href="/addsl">Add softlens</a>
 						</li>
+                        <li class="nav-item">
+							<a class="nav-link" href="/editsl">edit kriteria softlens</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Logout </a>
+
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">{{ csrf_field() }} </form>
+						</li>
+                        @endif
+
 					</ul>
 
 				</div>

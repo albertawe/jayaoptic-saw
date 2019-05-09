@@ -2,21 +2,21 @@
 @section('content')
 <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container">
-			<h3 class="tittle-w3layouts text-center my-lg-4 my-4">softlen</h3>
+			<h3 class="tittle-w3layouts text-center my-lg-4 my-4">softlens</h3>
 			<div class="inner_sec">
-				<p class="sub text-center mb-lg-5 mb-3">Masukkan informasi softlen baru</p>
+				<p class="sub text-center mb-lg-5 mb-3">Masukkan informasi softlens yang benar</p>
 				<div class="contact_grid_right">
-					<form method="post" action="/addsl" enctype="multipart/form-data">
+					<form method="post" action="/editsoftlen/{{$id}}" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
 								<div class="form-group">
 									<label class="my-2">Name</label>
-									<input class="form-control" type="text" name="name" placeholder="" required="">
+									<input class="form-control" value="{{$lens->nama}}" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
 									<label class="my-2">warna</label>
-									<select name="warna" >
+									<select name="warna">
 											@foreach($warnas as $warna)
 											<option value="{{$warna->name}}">{{$warna->name}}</option>
 											@endforeach
@@ -32,7 +32,7 @@
 								</div>
                                 <div class="form-group">
 									<label class="my-2">harga</label>
-									<input class="form-control" type="number" name="harga" placeholder="" required="">
+									<input class="form-control" value="{{$lens->harga}}" type="number" name="harga" placeholder="" required="">
 								</div>
                                 <div class="form-group">
 									<label class="my-2">kategori harga</label>
@@ -66,49 +66,13 @@
 							<div class="col-md-6 con-right">
 								<div class="form-group">
 									<label>Description</label><br>
-									<textarea id="textarea" name="description" placeholder="" required="" style="width:400px;height:400px"></textarea>
+									<textarea id="textarea" value="{{$lens->description}}" name="description" placeholder="" required="" style="width:400px;height:400px">{{$lens->description}}</textarea>
 								</div>
 								<input type="submit" class="form-control" value="Submit">
 							</div>
 						</div>
 					</form>
 				</div>
-                <div class="contact_grid_right">
-                    <table>
-                        <tr>
-                        <th>nama</th>
-                        <th>warna</th>
-                        <th>masa pakai</th>
-                        <th>harga</th>
-                        <th>kriharga</th>
-                        <th>ukuran</th>
-                        <th>kadar air</th>
-                        <th>description</th>
-                        <th>image</th>
-                        <th>action</th>
-                        </tr>
-                        @foreach($softlens as $softlen)
-                            <tr>
-                                <td>{{$softlen->nama}}</td>
-                                <td>{{$softlen->warna}}</td>
-                                <td>{{$softlen->masapakai}}</td>
-                                <td>{{$softlen->harga}}</td>
-                                <td>{{$softlen->kriharga}}</td>
-                                <td>{{$softlen->ukuran}}</td>
-                                <td>{{$softlen->kadarair}}</td>
-                                <td>{{$softlen->description}}</td>
-                                <td><img src="/images/{{$softlen->image}}" class="img-fluid" alt=""></td>
-                                <td><a href="/editsoftlen/{{$softlen->id}}">edit</a>
-                                <form method="POST" action="/deletesoftlen/{{$softlen->id}}">
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
-                                    <button type="submit">Delete</button>
-                                </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </table>
-                </div>
 			</div>
 		</div>
 	</section>

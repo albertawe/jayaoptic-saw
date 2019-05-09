@@ -14,7 +14,10 @@ class CreateJenisslsTable extends Migration
     public function up()
     {
         Schema::create('jenissls', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id');
+            $table->string('name');
+            $table->integer('bobot');
+            $table->string('sifat');
             $table->timestamps();
         });
     }
