@@ -2,20 +2,20 @@
 @section('content')
 <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container">
-			<h3 class="tittle-w3layouts text-center my-lg-4 my-4">Kacamata</h3>
+        <h3 class="tittle-w3layouts text-center my-lg-4 my-4" style="color:gray;margin-bottom:20px;"><strong>KACAMATA</strong> </h3>
 			<div class="inner_sec">
-				<p class="sub text-center mb-lg-5 mb-3">Masukkan informasi kacamata baru</p>
+				<h4 style="color:gray;" class="sub text-center mb-lg-5 mb-3">Masukkan informasi kacamata baru</h4>
 				<div class="contact_grid_right">
 					<form method="post" action="/addk" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
 								<div class="form-group">
-									<label class="my-2">Name</label>
+									<h4 style="color:gray;" class="my-2">Name</h4>
 									<input class="form-control" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">warna</label>
+									<h4 style="color:gray;" class="my-2">warna</h4>
 									<select name="warna" >
 											@foreach($warnas as $warna)
 											<option value="{{$warna->name}}">{{$warna->name}}</option>
@@ -23,7 +23,7 @@
 									</select>
 								</div>
                                 <div class="form-group">
-									<label class="my-2">ketebalan</label>
+									<h4 style="color:gray;" class="my-2">ketebalan</h4>
 									<select name="ketebalan" >
 											@foreach($ketebalans as $ketebalan)
 											<option value="{{$ketebalan->name}}">{{$ketebalan->name}}</option>
@@ -31,11 +31,11 @@
 									</select>
 								</div>
                                 <div class="form-group">
-									<label class="my-2">harga</label>
+									<h4 style="color:gray;" class="my-2">harga</h4>
 									<input class="form-control" type="number" name="harga" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">kategori harga</label>
+									<h4 style="color:gray;" class="my-2">kategori harga</h4>
 									<select name="kriharga" >
 											@foreach($hargas as $harga)
 											<option value="{{$harga->name}}">{{$harga->name}}</option>
@@ -43,7 +43,7 @@
 									</select>
 								</div>
                                 <div class="form-group">
-									<label class="my-2">ukuran</label>
+									<h4 style="color:gray;" class="my-2">ukuran</h4>
 									<select name="ukuran" >
 											@foreach($sizes as $size)
 											<option value="{{$size->name}}">{{$size->name}}</option>
@@ -51,7 +51,7 @@
 									</select>
 								</div>
                                 <div class="form-group">
-									<label class="my-2">model</label>
+									<h4 style="color:gray;" class="my-2">model</h4>
 									<select name="model" >
 											@foreach($models as $model)
 											<option value="{{$model->name}}">{{$model->name}}</option>
@@ -59,13 +59,13 @@
 									</select>
 								</div>
                                 <div class="form-group">
-                                    <label class="my-2">upload image</label>
+                                    <h4 style="color:gray;" class="my-2">upload image</h4>
 									<input type="file" name="image" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6 con-right">
 								<div class="form-group">
-									<label>Description</label><br>
+									<h4 style="color:gray;">Description</h4><br>
 									<textarea id="textarea" name="description" placeholder="" required="" style="width:400px;height:400px"></textarea>
 								</div>
 								<input type="submit" class="form-control" value="Submit">

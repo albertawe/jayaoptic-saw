@@ -18,7 +18,7 @@
 									<label class="my-2">warna</label>
 									<select name="warna">
 											@foreach($warnas as $warna)
-											<option value="{{$warna->name}}">{{$warna->name}}</option>
+											<option value="{{$warna->name}}" {{ ( $warna->name == $lens->warna ) ? 'selected' : ''}}>{{$warna->name}}</option>
 											@endforeach
 									</select>
 								</div>
@@ -26,7 +26,7 @@
 									<label class="my-2">kadar</label>
 									<select name="kadar" >
 											@foreach($kadars as $kadar)
-											<option value="{{$kadar->name}}">{{$kadar->name}}</option>
+											<option value="{{$kadar->name}}" {{ ( $kadar->name == $lens->kadarair ) ? 'selected' : ''}}>{{$kadar->name}}</option>
 											@endforeach
 									</select>
 								</div>
@@ -38,7 +38,7 @@
 									<label class="my-2">kategori harga</label>
 									<select name="kriharga" >
 											@foreach($hargas as $harga)
-											<option value="{{$harga->name}}">{{$harga->name}}</option>
+											<option value="{{$harga->name}}" {{ ( $harga->name == $lens->kriharga ) ? 'selected' : ''}}>{{$harga->name}}</option>
 											@endforeach
 									</select>
 								</div>
@@ -46,7 +46,7 @@
 									<label class="my-2">ukuran</label>
 									<select name="ukuran" >
 											@foreach($sizes as $size)
-											<option value="{{$size->name}}">{{$size->name}}</option>
+											<option value="{{$size->name}}" {{ ( $size->name == $lens->ukuran ) ? 'selected' : ''}}>{{$size->name}}</option>
 											@endforeach
 									</select>
 								</div>
@@ -54,7 +54,7 @@
 									<label class="my-2">masa</label>
 									<select name="masa" >
 											@foreach($masas as $masa)
-											<option value="{{$masa->name}}">{{$masa->name}}</option>
+											<option value="{{$masa->name}}" {{ ( $masa->name == $lens->masapakai ) ? 'selected' : ''}}>{{$masa->name}}</option>
 											@endforeach
 									</select>
 								</div>

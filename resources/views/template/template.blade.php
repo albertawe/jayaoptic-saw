@@ -37,14 +37,12 @@
 					<ul>
 						<li>
 							<i class="fas fa-phone"></i> Call</li>
-						<li class="number-phone mt-3">123123123</li>
+						<li class="number-phone mt-3">061-7360757</li>
 					</ul>
 				</div>
 				<div class="col-md-6 logo-w3layouts text-center">
-					<h1 class="logo-w3layouts">
-						<a class="navbar-brand" href="index.html">
-							Jaya Optical </a>
-					</h1>
+						<a href="/">
+							<img src="/images/logo.png" style="height:150px;width:250px;margin-bottom:0px;margin-top:0px;"> </a>
 				</div>
 			</div>
 			<label class="top-log mx-auto"></label>
@@ -62,21 +60,18 @@
 							<a class="nav-link" href="/gensl">Pemilihan softlens</a>
 						</li>
                         @if (!\Auth::user())
-                        <li class="nav-item">
-							<a class="nav-link" href="/login">login</a>
-						</li>
                         @else
                         <li class="nav-item">
 							<a class="nav-link" href="/addk">Add Kacamata</a>
 						</li>
                         <li class="nav-item">
-							<a class="nav-link" href="/editkc">edit kriteria Kacamata</a>
+							<a class="nav-link" href="/editkc">Kelola kriteria Kacamata</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/addsl">Add softlens</a>
 						</li>
                         <li class="nav-item">
-							<a class="nav-link" href="/editsl">edit kriteria softlens</a>
+							<a class="nav-link" href="/editsl">Kelola kriteria softlens</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Logout </a>
@@ -126,21 +121,39 @@
                                 <h3>Quick Links</h3>
                             </div>
                             <ul class="links">
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="about.html">About</a>
-                                </li>
-                                <li>
-                                    <a href="404.html">Error</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">Shop</a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">Contact Us</a>
-                                </li>
+                            <li class="nav-item">
+							<a class="nav-link ml-lg-0" href="/">Home
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/genk">Pemilihan Kacamata</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/gensl">Pemilihan softlens</a>
+						</li>
+                        @if (!\Auth::user())
+                        <li class="nav-item">
+							<a class="nav-link" href="/login">login</a>
+						</li>
+                        @else
+                        <li class="nav-item">
+							<a class="nav-link" href="/addk">Add Kacamata</a>
+						</li>
+                        <li class="nav-item">
+							<a class="nav-link" href="/editkc">Kelola kriteria Kacamata</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/addsl">Add softlens</a>
+						</li>
+                        <li class="nav-item">
+							<a class="nav-link" href="/editsl">Kelola kriteria softlens</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Logout </a>
+
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">{{ csrf_field() }} </form>
+						</li>
+                        @endif
                             </ul>
                         </div>
                     </div>
@@ -192,6 +205,18 @@
             <!-- //dropdown nav -->
             <script src="/js/move-top.js"></script>
             <script src="/js/easing.js"></script>
+
+            <script type="text/javascript">
+                function findTotal(){
+                    var arr = document.getElementsById("bobot");
+                    var tot=0;
+                    for(var i=0;i<arr.length;i++){
+                        if(arr[i].value)
+                            tot += arr[i].value;
+                    }
+                    document.getElementById("total").value = tot;
+                }
+            </script>
             <script>
                 jQuery(document).ready(function($) {
                     $(".scroll").click(function(event) {

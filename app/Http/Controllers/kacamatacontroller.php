@@ -52,11 +52,11 @@ class kacamatacontroller extends Controller
     public function gen(Request $request)
     {
         $kacamatas = kacamata::all();
-        $bobotwarna = $request->bobotwarna/10;
-        $bobotketebalan = $request->bobotketebalan/10;
-        $bobotharga = $request->bobotharga/10;
-        $bobotukuran = $request->bobotukuran/10;
-        $bobotmodel = $request->bobotmodel/10;
+        $bobotwarna = $request->bobotwarna/100;
+        $bobotketebalan = $request->bobotketebalan/100;
+        $bobotharga = $request->bobotharga/100;
+        $bobotukuran = $request->bobotukuran/100;
+        $bobotmodel = $request->bobotmodel/100;
         $warnaP=array();
         $ketebalanP=array();
         $hargaP=array();
@@ -78,6 +78,7 @@ class kacamatacontroller extends Controller
         $i=0;
           foreach ($kacamatas as $kacamata) {
             $nama[$i] = $kacamata->nama;
+            $id[$i] = $kacamata->id;
             $warna = warnakc::where('name',$kacamata->warna)->first();
             $ketebalan = ktblnkc::where('name',$kacamata->ketebalan)->first();
             $harga = hargakc::where('name',$kacamata->kriharga)->first();
@@ -126,8 +127,8 @@ class kacamatacontroller extends Controller
               $jumlah[$i] = $warna_hitung[$i] + $ketebalan_hitung[$i] + $harga_hitung[$i] + $ukuran_hitung[$i] + $model_hitung[$i];
               $i+=1;
           }
-           array_multisort($jumlah, SORT_DESC,$nama, $warna_hitung, $ketebalan_hitung, $harga_hitung, $ukuran_hitung, $model_hitung, $jumlah);
-           return view('hasilseleksi')->with('nama', $nama)->with('warna', $warna_hitung)->with('ketebalan', $ketebalan_hitung)->with('harga', $harga_hitung)->with('ukuran', $ukuran_hitung)->with('model', $model_hitung)->with('jumlah', $jumlah);
+           array_multisort($jumlah, SORT_DESC,$nama, $id, $warna_hitung, $ketebalan_hitung, $harga_hitung, $ukuran_hitung, $model_hitung, $jumlah);
+           return view('hasilseleksi')->with('id', $id)->with('nama', $nama)->with('warna', $warna_hitung)->with('ketebalan', $ketebalan_hitung)->with('harga', $harga_hitung)->with('ukuran', $ukuran_hitung)->with('model', $model_hitung)->with('jumlah', $jumlah);
     }
 
     public function store(Request $request)

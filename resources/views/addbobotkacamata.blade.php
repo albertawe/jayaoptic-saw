@@ -2,25 +2,25 @@
 @section('content')
 <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container">
-			<h3 class="tittle-w3layouts text-center my-lg-4 my-4">Kacamata</h3>
+        <h3 class="tittle-w3layouts text-center my-lg-4 my-4" style="color:gray;margin-bottom:20px;"><strong>KACAMATA</strong> </h3>
 			<div class="inner_sec">
-				<p class="sub text-center mb-lg-5 mb-3">Masukkan bobot kriteria kacamata</p>
+				<h4 style="color:gray;" class="sub text-center mb-lg-5 mb-3">Masukkan bobot kriteria kacamata</h4>
 				<div class="contact_grid_right">
 					<form method="post" action="/warna" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
-                                <h3>warna</h3>
+                                <h3 style="color:gray;">warna</h3>
 								<div class="form-group">
-									<label class="my-2">warna</label>
+									<h4 style="color:gray;">nama warna</h4>
 									<input class="form-control" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">bobot</label>
+									<h4 style="color:gray;" >bobot</h4>
 									<input class="form-control" type="number" name="bobot" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">sifat</label>
+									<h4 style="color:gray;" >sifat</h4>
 									<select name="sifat" >
 											<option value="pos">positif</option>
                                             <option value="neg">negatif</option>
@@ -30,7 +30,7 @@
 							</div>
 						</div>
 					</form>
-                    <table>
+                    <table style="margin-top:15px;margin-bottom:15px;" style="margin-top:15px;margin-bottom:15px;">
                     <tr>
                     <th>nama</th>
                     <th>bobot nilai</th>
@@ -51,24 +51,24 @@
                             </td>
                         </tr>
                     @endforeach
-                    </table>
+                    </table style="margin-top:15px;margin-bottom:15px;">
 				</div>
                 <div class="contact_grid_right">
 					<form method="post" action="/ketebalan" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
-                                <h3>ketebalan</h3>
+                                <h3 style="color:gray;">ketebalan</h3>
 								<div class="form-group">
-									<label class="my-2">ketebalan</label>
+									<h4 style="color:gray;" >nama ketebalan</h4>
 									<input class="form-control" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">bobot</label>
+									<h4 style="color:gray;" >bobot</h4>
 									<input class="form-control" type="number" name="bobot" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">sifat</label>
+									<h4 style="color:gray;" >sifat</h4>
 									<select name="sifat" >
 											<option value="pos">positif</option>
                                             <option value="neg">negatif</option>
@@ -78,7 +78,7 @@
 							</div>
 						</div>
 					</form>
-                    <table>
+                    <table style="margin-top:15px;margin-bottom:15px;">
                     <tr>
                     <th>nama</th>
                     <th>bobot nilai</th>
@@ -99,24 +99,24 @@
                              </td>
                         </tr>
                     @endforeach
-                    </table>
+                    </table style="margin-top:15px;margin-bottom:15px;">
 				</div>
                 <div class="contact_grid_right">
 					<form method="post" action="/harga" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
-                                <h3>harga</h3>
+                                <h3 style="color:gray;">harga</h3>
 								<div class="form-group">
-									<label class="my-2">harga</label>
+									<h4 style="color:gray;" >nama harga</h4>
 									<input class="form-control" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">bobot</label>
+									<h4 style="color:gray;" >bobot</h4>
 									<input class="form-control" type="number" name="bobot" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">sifat</label>
+									<h4 style="color:gray;" >sifat</h4>
 									<select name="sifat" >
 											<option value="pos">positif</option>
                                             <option value="neg">negatif</option>
@@ -126,7 +126,7 @@
 							</div>
 						</div>
 					</form>
-                    <table>
+                    <table style="margin-top:15px;margin-bottom:15px;">
                     <tr>
                     <th>nama</th>
                     <th>bobot nilai</th>
@@ -147,24 +147,24 @@
                              </td>
                         </tr>
                     @endforeach
-                    </table>
+                    </table style="margin-top:15px;margin-bottom:15px;">
 				</div>
                 <div class="contact_grid_right">
 					<form method="post" action="/ukuran" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
-                                <h3>ukuran</h3>
+                                <h3 style="color:gray;">ukuran</h3>
 								<div class="form-group">
-									<label class="my-2">ukuran</label>
+									<h4 style="color:gray;" >nama ukuran</h4>
 									<input class="form-control" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">bobot</label>
+									<h4 style="color:gray;" >bobot</h4>
 									<input class="form-control" type="number" name="bobot" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">sifat</label>
+									<h4 style="color:gray;" >sifat</h4>
 									<select name="sifat" >
 											<option value="pos">positif</option>
                                             <option value="neg">negatif</option>
@@ -174,7 +174,7 @@
 							</div>
 						</div>
 					</form>
-                    <table>
+                    <table style="margin-top:15px;margin-bottom:15px;">
                     <tr>
                     <th>nama</th>
                     <th>bobot nilai</th>
@@ -195,24 +195,24 @@
                             </td>
                         </tr>
                     @endforeach
-                    </table>
+                    </table style="margin-top:15px;margin-bottom:15px;">
 				</div>
                 <div class="contact_grid_right">
 					<form method="post" action="/model" enctype="multipart/form-data">
                     @csrf
 						<div class="row contact_left_grid">
 							<div class="col-md-6 con-left">
-                                <h3>model</h3>
+                                <h3 style="color:gray;">model</h3>
 								<div class="form-group">
-									<label class="my-2">model</label>
+									<h4 style="color:gray;" >nama model</h4>
 									<input class="form-control" type="text" name="name" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">bobot</label>
+									<h4 style="color:gray;" >bobot</h4>
 									<input class="form-control" type="number" name="bobot" placeholder="" required="">
 								</div>
                                 <div class="form-group">
-									<label class="my-2">sifat</label>
+									<h4 style="color:gray;" >sifat</h4>
 									<select name="sifat" >
 											<option value="pos">positif</option>
                                             <option value="neg">negatif</option>
@@ -222,7 +222,7 @@
 							</div>
 						</div>
 					</form>
-                    <table>
+                    <table style="margin-top:15px;margin-bottom:15px;">
                     <tr>
                     <th>nama</th>
                     <th>bobot nilai</th>
@@ -243,7 +243,7 @@
                             </td>
                         </tr>
                     @endforeach
-                    </table>
+                    </table style="margin-top:15px;margin-bottom:15px;">
 				</div>
 			</div>
 		</div>

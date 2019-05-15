@@ -52,11 +52,11 @@ class softlenscontroller extends Controller
     public function gen(Request $request)
     {
         $softlens = softlen::all();
-        $bobotwarna = $request->bobotwarna/10;
-        $bobotkadar = $request->bobotkadar/10;
-        $bobotharga = $request->bobotharga/10;
-        $bobotukuran = $request->bobotukuran/10;
-        $bobotmasa = $request->bobotmasa/10;
+        $bobotwarna = $request->bobotwarna/100;
+        $bobotkadar = $request->bobotkadar/100;
+        $bobotharga = $request->bobotharga/100;
+        $bobotukuran = $request->bobotukuran/100;
+        $bobotmasa = $request->bobotmasa/100;
         $warnaP=array();
         $kadarP=array();
         $hargaP=array();
@@ -78,6 +78,7 @@ class softlenscontroller extends Controller
         $i=0;
           foreach ($softlens as $softlen) {
             $nama[$i] = $softlen->nama;
+            $id[$i] = $softlen->id;
             $warna = warnasl::where('name',$softlen->warna)->first();
             $kadar = kdrsl::where('name',$softlen->kadarair)->first();
             $harga = hargasl::where('name',$softlen->kriharga)->first();
@@ -126,8 +127,8 @@ class softlenscontroller extends Controller
               $jumlah[$i] = $warna_hitung[$i] + $kadar_hitung[$i] + $harga_hitung[$i] + $ukuran_hitung[$i] + $masa_hitung[$i];
               $i+=1;
           }
-           array_multisort($jumlah, SORT_DESC,$nama, $warna_hitung, $kadar_hitung, $harga_hitung, $ukuran_hitung, $masa_hitung, $jumlah);
-           return view('hasilseleksisoftlen')->with('nama', $nama)->with('warna', $warna_hitung)->with('kadar', $kadar_hitung)->with('harga', $harga_hitung)->with('ukuran', $ukuran_hitung)->with('masa', $masa_hitung)->with('jumlah', $jumlah);
+           array_multisort($jumlah, SORT_DESC,$nama, $id, $warna_hitung, $kadar_hitung, $harga_hitung, $ukuran_hitung, $masa_hitung, $jumlah);
+           return view('hasilseleksisoftlen')->with('id', $id)->with('nama', $nama)->with('warna', $warna_hitung)->with('kadar', $kadar_hitung)->with('harga', $harga_hitung)->with('ukuran', $ukuran_hitung)->with('masa', $masa_hitung)->with('jumlah', $jumlah);
     }
 
     public function store(Request $request)

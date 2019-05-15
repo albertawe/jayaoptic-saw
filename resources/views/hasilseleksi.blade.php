@@ -2,29 +2,29 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-             <!--    <div class="panel-heading">Dashboard</div> -->
-
-                <div class="panel-body">
+        <div style="text-align:center">
+            <div class="panel panel-default"style="text-align:center">
+                <div class="panel-body"style="text-align:center">
                     <div>
-                    <h5><strong>Hasil Seleksi (Kriteria x Bobot)</strong> </h5>
+                    <h5 style="color:gray;margin-bottom:20px;"><strong>HASIL SELEKSI</strong> </h5>
                     </div>
-                    <table>
+                    <table style="text-align:center;margin-bottom:20px;">
                     <tr>
-                      <th>Nama Kacamata</th>
+                      <th>Peringkat</th>
+                      <th class="nav-link ml-lg-0">Nama Kacamata</th>
                       <th>warna</th>
                       <th>harga</th>
                       <th>ukuran</th>
                       <th>ketebalan</th>
                       <th>model</th>
                       <th>Jumlah</th>
+                      <th>action</th>
                     </tr>
 
-                    @for($i=0;$i<=3;$i++)
+                    @for($i=0;$i<=100;$i++)
                     @if(isset($nama[$i]))
                     <tr>
-
+                        <td>{{$i + 1}}</td>
                         <td>{{$nama[$i]}}</td>
                         <td>{{$warna[$i]}}</td>
                         <td>{{$harga[$i]}}</td>
@@ -32,7 +32,9 @@
                         <td>{{$ketebalan[$i]}}</td>
                         <td>{{$model[$i]}}</td>
                         <td>{{$jumlah[$i]}}</td>
-
+                        <td><form method="get" action="/viewkacamata/{{$id[$i]}}">
+                            <button type="submit" style="background-color: #4CAF50;border-radius:20px">Lihat</button>
+                        </form></td>
                     </tr>
                    @endif
                     @endfor
